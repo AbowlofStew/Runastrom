@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveBehaviour : MonoBehaviour {
+    float timer;
+    public float deleteTime = 25;
     Vector2 isoForward, isoBackward, direction;
     int dir;
     public float movementspeed = 50;
@@ -15,6 +17,11 @@ public class WaveBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         move();
+        timer += Time.deltaTime;
+        if(timer >= deleteTime)
+        {
+            selfdestruct();
+        }
 	}
     public void SetUp()
     {
@@ -36,6 +43,7 @@ public class WaveBehaviour : MonoBehaviour {
     }
     public void selfdestruct()
     {
-
+        GameObject.Find("Spawner Manager").GetComponent<WaveHandler>().wavesList.Remove(this.gameObject);   
+        Destroy(this.gameObject);
     }
 }

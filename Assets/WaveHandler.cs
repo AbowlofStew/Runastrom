@@ -8,13 +8,16 @@ public class WaveHandler : MonoBehaviour {
     float timer;
     public float spawntime = 1;
     public GameObject Wave;
+
+    public List<GameObject> wavesList = new List<GameObject>();
 	// Use this for initialization
 	void Start () {
        
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         timer += Time.deltaTime;
         if (timer >= spawntime)
         {
@@ -31,8 +34,16 @@ public class WaveHandler : MonoBehaviour {
     }
     public void spawnWave()
     {
+        
         generateSpawnLoc();
-        Instantiate(Wave, spawnloc, new Quaternion(0,0,0,0));
+        wavesList.Add(Instantiate(Wave, spawnloc, new Quaternion(0,0,0,0)));
+    }
+    public void changespeed(float speed)
+    {
+        foreach(GameObject wave in wavesList)
+        {
+            wave.gameObject.GetComponent<WaveBehaviour>().movementspeed = speed;
+        }
     }
     
 }
