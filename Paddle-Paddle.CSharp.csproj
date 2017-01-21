@@ -82,7 +82,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Background_Script.cs" />
+    <Compile Include="Assets\Background_Tile_Spawner.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
+    <Compile Include="Assets\WaveBehaviour.cs" />
+    <Compile Include="Assets\WaveHandler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
