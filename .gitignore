@@ -14,7 +14,7 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.info
-
+Library/
 # Windows shortcuts
 *.lnk
 Library/metadata/
@@ -48,6 +48,3 @@ Temp\UnityTempFile*
 Network Trash Folder
 Temporary Items
 .apdisk
-Library/UnityAssemblies/version.txt
-Library/UnityAssemblies/UnityEngine.xml
-*.xml
