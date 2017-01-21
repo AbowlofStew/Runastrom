@@ -38,7 +38,7 @@ public class WaveHandler : MonoBehaviour {
         generateSpawnLoc();
         wavesList.Add(Instantiate(Wave, spawnloc, new Quaternion(0,0,0,0)));
     }
-    public void changespeed(float speed)
+    public void ChangeSpeed(float speed)
     {
         foreach(GameObject wave in wavesList)
         {
