@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     public float movementLimit = 3;
+    public float maxMoveSpeed, minMoveSpeed;
     public float moveSpeed;
     public float currentMovementPosition = 0;
 

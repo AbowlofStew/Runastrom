@@ -19,7 +19,7 @@ $RECYCLE.BIN/
 *.lnk
 Library/metadata/
 Temp/UnityLockFile
-
+Temp\UnityTempFile*
 # =========================
 # Operating System Files
 # =========================
@@ -48,3 +48,6 @@ Temp/UnityLockFile
 Network Trash Folder
 Temporary Items
 .apdisk
+Library/UnityAssemblies/version.txt
+Library/UnityAssemblies/UnityEngine.xml
+*.xml
