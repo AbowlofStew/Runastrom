@@ -13,9 +13,12 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+*.info
 
 # Windows shortcuts
 *.lnk
+Library/metadata/
+Temp/
 
 # =========================
 # Operating System Files
