@@ -46,11 +46,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Background_Script.cs" />
-     <Compile Include="Assets\Background_Tile_Spawner.cs" />
-     <Compile Include="Assets\PlayerMovement.cs" />
-     <Compile Include="Assets\WaveBehaviour.cs" />
-     <Compile Include="Assets\WaveHandler.cs" />
+     <Compile Include="Assets\Scripts\Background_Script.cs" />
+     <Compile Include="Assets\Scripts\Background_Tile_Spawner.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\WaveBehaviour.cs" />
+     <Compile Include="Assets\Scripts\WaveHandler.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

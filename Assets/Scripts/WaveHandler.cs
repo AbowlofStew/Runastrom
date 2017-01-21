@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WaveHandler : MonoBehaviour {
     Vector2 spawnloc;
+    float currentSpeed;
     float x, y;
     float timer;
     public float spawntime = 1;
@@ -36,10 +37,13 @@ public class WaveHandler : MonoBehaviour {
     {
         
         generateSpawnLoc();
-        wavesList.Add(Instantiate(Wave, spawnloc, new Quaternion(0,0,0,0)));
+        GameObject wave = Instantiate(Wave, spawnloc, new Quaternion(0, 0, 0, 0));
+        wavesList.Add(wave);
+        wave.GetComponent<WaveBehaviour>().movementspeed = currentSpeed;
     }
     public void changespeed(float speed)
     {
+        currentSpeed = speed;
         foreach(GameObject wave in wavesList)
         {
             wave.gameObject.GetComponent<WaveBehaviour>().movementspeed = speed;

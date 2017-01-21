@@ -12,6 +12,7 @@ public class WaveBehaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         SetUp();
+        deleteTime = Random.Range(3, 20);
 	}
 	
 	// Update is called once per frame
