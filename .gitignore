@@ -14,12 +14,12 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.info
-
+Library/
 # Windows shortcuts
 *.lnk
 Library/metadata/
 Temp/UnityLockFile
-
+Temp\UnityTempFile*
 # =========================
 # Operating System Files
 # =========================
