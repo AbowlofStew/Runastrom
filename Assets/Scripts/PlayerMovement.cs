@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject spawnManager;
     private bool surfing;
     Vector2 isoLeft, isoRight;
-    private bool hitting = false;
     public enum KeysPressed
     {
         NoKeysPressed,
@@ -38,10 +37,7 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (hitting)
-        {
-            distance = distance - obsPenalty * Time.deltaTime;
-        }
+
         if(surfing)
         {
             distance += waveBonus;
@@ -131,17 +127,15 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (other.tag == "Wave")
         {
-            surfing = true;
             spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0);
             spawnManager.GetComponent<ObstacleHandler>().changeSpeed(2f);
-            
+            surfing = true;
         }
         if ( other.tag == "Obstacle")
         {
-            hitting = true;
-            spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.8f);
+            spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.4f);
             spawnManager.GetComponent<ObstacleHandler>().changeSpeed(0f);
-            
+            distance = distance - obsPenalty * Time.deltaTime;
         }
     }
 
@@ -149,14 +143,12 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (other.tag == "Wave")
         {
-
             spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.2f);
             spawnManager.GetComponent<ObstacleHandler>().changeSpeed(1f);
             surfing = false;
         }
         if (other.tag == "Obstacle")
         {
-            hitting = false;
             spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.2f);
             spawnManager.GetComponent<ObstacleHandler>().changeSpeed(1f);
             distance = distance - obsPenalty * Time.deltaTime;
