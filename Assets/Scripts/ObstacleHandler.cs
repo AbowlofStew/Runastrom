@@ -16,7 +16,7 @@ public class ObstacleHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         timer += Time.deltaTime;
-        spawnRate = 2 / (timer / 60);
+        spawnRate = 1.5f / (timer / 60);
         if (spawnRate < 0.1f)
         {
             spawnRate = 0.1f;
