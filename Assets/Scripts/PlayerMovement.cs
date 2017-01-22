@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
     private float moveSpeed;
     private float currentMovementPosition = 0;
     public GameObject spawnManager;
-    public bool collidedWithPlayer;
+    private bool surfing;
     Vector2 isoLeft, isoRight;
     public enum KeysPressed
     {
@@ -87,12 +87,21 @@ public class PlayerMovement : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0);
-       
+        surfing = true;
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.2f);
+        surfing = false;
+    }
+    public bool IsSurfing()
+    {
+        return surfing;
     }
 
+    public void StopSurfing()
+    {
+        surfing = false;
+    }
 }

@@ -13,7 +13,7 @@ public class WaveBehaviour : MonoBehaviour {
     public Sprite wave2;
     public float animationTimer;
     float animationCounter = 2;
-
+    private PlayerMovement playerMovement;
     private bool collidingWithPlayer = false;
 
     // Use this for initialization
@@ -60,6 +60,7 @@ public class WaveBehaviour : MonoBehaviour {
         direction = isoForward;
         deleteTime = Random.Range(7, 15);
         spawnManager = GameObject.FindGameObjectWithTag("GameController");
+        playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
     }
     public void move()
     {
@@ -67,6 +68,7 @@ public class WaveBehaviour : MonoBehaviour {
     }
     public void selfdestruct()
     {
+        playerMovement.StopSurfing();
         GameObject.Find("Spawner Manager").GetComponent<WaveHandler>().wavesList.Remove(this.gameObject);   
         Destroy(this.gameObject);
     }
