@@ -128,7 +128,7 @@ public class PlayerMovement : MonoBehaviour {
         if (other.tag == "Wave")
         {
             spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0);
-            spawnManager.GetComponent<ObstacleHandler>().changeSpeed(0.4f);
+            spawnManager.GetComponent<ObstacleHandler>().changeSpeed(2f);
             surfing = true;
         }
         if ( other.tag == "Obstacle")
@@ -144,13 +144,13 @@ public class PlayerMovement : MonoBehaviour {
         if (other.tag == "Wave")
         {
             spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.2f);
-            spawnManager.GetComponent<ObstacleHandler>().changeSpeed(0.2f);
+            spawnManager.GetComponent<ObstacleHandler>().changeSpeed(1f);
             surfing = false;
         }
         if (other.tag == "Obstacle")
         {
             spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.2f);
-            spawnManager.GetComponent<ObstacleHandler>().changeSpeed(0.2f);
+            spawnManager.GetComponent<ObstacleHandler>().changeSpeed(1f);
             distance = distance - obsPenalty * Time.deltaTime;
         }
     }

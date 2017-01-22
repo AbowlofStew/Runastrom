@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstacleBehaviour : MonoBehaviour {
     float deathTimer;
-    float lifespan = 20;
+    float lifespan = 15;
     Vector2 direction;
     float speed = 0.1f;
 	// Use this for initialization
