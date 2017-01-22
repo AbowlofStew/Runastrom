@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paddle-Paddle.Plugins", "Paddle-Paddle.Plugins.csproj", "{3FA5D16F-096C-C83C-6062-CA47A8908611}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paddle-Paddle.CSharp.Plugins", "Paddle-Paddle.CSharp.Plugins.csproj", "{7F872D84-FF2C-43A0-ABF7-A1C843F3A08A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paddle-Paddle", "Paddle-Paddle.csproj", "{824E30EC-F73E-5AE5-5B36-BE852D1CCFFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paddle-Paddle.CSharp", "Paddle-Paddle.CSharp.csproj", "{0DD7245D-0BE3-81BB-2F60-C3EB9D2D9E9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paddle-Paddle.Editor.Plugins", "Paddle-Paddle.Editor.Plugins.csproj", "{BFDF7D6B-0029-2A26-91ED-74B00A4A42BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paddle-Paddle.CSharp.Editor.Plugins", "Paddle-Paddle.CSharp.Editor.Plugins.csproj", "{5BC0742F-4685-39D8-AD50-2F2D131664C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,18 +13,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3FA5D16F-096C-C83C-6062-CA47A8908611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FA5D16F-096C-C83C-6062-CA47A8908611}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FA5D16F-096C-C83C-6062-CA47A8908611}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FA5D16F-096C-C83C-6062-CA47A8908611}.Release|Any CPU.Build.0 = Release|Any CPU
-		{824E30EC-F73E-5AE5-5B36-BE852D1CCFFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{824E30EC-F73E-5AE5-5B36-BE852D1CCFFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{824E30EC-F73E-5AE5-5B36-BE852D1CCFFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{824E30EC-F73E-5AE5-5B36-BE852D1CCFFE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BFDF7D6B-0029-2A26-91ED-74B00A4A42BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BFDF7D6B-0029-2A26-91ED-74B00A4A42BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BFDF7D6B-0029-2A26-91ED-74B00A4A42BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BFDF7D6B-0029-2A26-91ED-74B00A4A42BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F872D84-FF2C-43A0-ABF7-A1C843F3A08A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F872D84-FF2C-43A0-ABF7-A1C843F3A08A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F872D84-FF2C-43A0-ABF7-A1C843F3A08A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F872D84-FF2C-43A0-ABF7-A1C843F3A08A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DD7245D-0BE3-81BB-2F60-C3EB9D2D9E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DD7245D-0BE3-81BB-2F60-C3EB9D2D9E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DD7245D-0BE3-81BB-2F60-C3EB9D2D9E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DD7245D-0BE3-81BB-2F60-C3EB9D2D9E9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BC0742F-4685-39D8-AD50-2F2D131664C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BC0742F-4685-39D8-AD50-2F2D131664C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BC0742F-4685-39D8-AD50-2F2D131664C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BC0742F-4685-39D8-AD50-2F2D131664C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
