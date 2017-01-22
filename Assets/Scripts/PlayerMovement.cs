@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
+    public GameObject fog;
+    public float maxdistance = 2;
+    public float speedloss = 0.1f;
+    public float distance = 1;
+    public float waveBonus = 0.1f;
     public float movementLimit = 3;
     public float maxMoveSpeed, minMoveSpeed;
     private float moveSpeed;
@@ -26,12 +31,23 @@ public class PlayerMovement : MonoBehaviour {
         moveSpeed = minMoveSpeed;
         isoRight = Vector2.down + Vector2.right;
         isoRight.Normalize();
-
+        fog = GameObject.Find("Impending Fog");
     }
 	
 	// Update is called once per frame
 	void Update () {
-
+        if(surfing)
+        {
+            distance += waveBonus;
+        }
+        else
+        {
+            distance -= Time.deltaTime * speedloss;
+        }
+        if(distance == 0.3)
+        {
+            Debug.Log("Game Over");
+        }
         if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) 
             && currentMovementPosition <= movementLimit)
         {
@@ -81,6 +97,18 @@ public class PlayerMovement : MonoBehaviour {
             LastKeyPressed = KeysPressed.NoKeysPressed;
             this.gameObject.GetComponent<PlayerAnimation>().state = "main";
         }
+        if (distance >= maxdistance)
+        {
+            distance = maxdistance;
+        }
+            Vector2 vec = Vector2.down + Vector2.left;
+            vec.Normalize();
+            Vector2 vec2 = new Vector2(0, 0);
+            vec = vec2 + vec;
+            vec = vec * distance;
+            fog.transform.position = new Vector3(vec.x, vec.y, 0);
+        
+        
     }
 
 
