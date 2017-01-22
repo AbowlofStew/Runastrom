@@ -47,6 +47,7 @@ public class PlayerMovement : MonoBehaviour {
             transform.Translate(isoLeft*moveSpeed*Time.deltaTime);
             currentMovementPosition += moveSpeed * Time.deltaTime;
             LastKeyPressed = KeysPressed.LeftKeyPressed;
+            this.gameObject.GetComponent<PlayerAnimation>().state = "left";
         }
 
         if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow)
@@ -64,6 +65,7 @@ public class PlayerMovement : MonoBehaviour {
             transform.Translate(isoRight*moveSpeed*Time.deltaTime);
             currentMovementPosition -= moveSpeed * Time.deltaTime;
             LastKeyPressed = KeysPressed.RightKeyPressed;
+            this.gameObject.GetComponent<PlayerAnimation>().state = "right";
         }
 
         if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow))
@@ -77,6 +79,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             moveSpeed = minMoveSpeed;
             LastKeyPressed = KeysPressed.NoKeysPressed;
+            this.gameObject.GetComponent<PlayerAnimation>().state = "main";
         }
     }
 

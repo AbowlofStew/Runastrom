@@ -89,6 +89,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Background_Script.cs" />
     <Compile Include="Assets\Scripts\Background_Tile_Spawner.cs" />
+    <Compile Include="Assets\Scripts\PlayerAnimation.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\WaveBehaviour.cs" />
     <Compile Include="Assets\Scripts\WaveHandler.cs" />
