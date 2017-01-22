@@ -32,7 +32,7 @@ public class WaveBehaviour : MonoBehaviour {
         {
             if (collidingWithPlayer == true)
             {
-                spawnManager.GetComponent<WaveHandler>().changespeed(0.2f);
+                spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.2f);
                 spawnManager.GetComponent<WaveHandler>().WaveSpawnEnabled(true);
                 spawnManager.GetComponent<Background_Tile_Spawner>().ChangeOceanScrollSpeed(0.5f);
             }
@@ -81,7 +81,7 @@ public class WaveBehaviour : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             collidingWithPlayer = true;
-            spawnManager.GetComponent<WaveHandler>().changespeed(0);
+            spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0);
             spawnManager.GetComponent<WaveHandler>().WaveSpawnEnabled(false);
             spawnManager.GetComponent<Background_Tile_Spawner>().ChangeOceanScrollSpeed(1f);
         }
@@ -93,7 +93,7 @@ public class WaveBehaviour : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             collidingWithPlayer = false;
-            spawnManager.GetComponent<WaveHandler>().changespeed(0.2f);
+            spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.2f);
             spawnManager.GetComponent<WaveHandler>().WaveSpawnEnabled(true);
             spawnManager.GetComponent<Background_Tile_Spawner>().ChangeOceanScrollSpeed(0.5f);
         }
