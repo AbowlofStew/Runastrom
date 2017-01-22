@@ -80,12 +80,12 @@ public class PlayerMovement : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        //spawnManager.GetComponent<WaveHandler>().
+        spawnManager.GetComponent<WaveHandler>().changespeed(0);
        
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        
+        spawnManager.GetComponent<WaveHandler>().changespeed(0.2f);
     }
 }
