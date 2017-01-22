@@ -15,7 +15,7 @@ public class WaveHandler : MonoBehaviour {
     public List<GameObject> wavesList = new List<GameObject>();
 	// Use this for initialization
 	void Start () {
-        changespeed(0.2f);
+        ChangeSpeed(0.2f);
 	}
 	
 	// Update is called once per frame
