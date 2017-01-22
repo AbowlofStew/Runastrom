@@ -9,20 +9,25 @@ public class WaveBehaviour : MonoBehaviour {
     int dir;
     public float movementspeed = 50;
     public GameObject spawnManager;
+    public Sprite wave1;
+    public Sprite wave2;
+    public float animationTimer;
+    float animationCounter = 2;
 
     private bool collidingWithPlayer = false;
 
     // Use this for initialization
     void Start () {
         SetUp();
-        deleteTime = Random.Range(7, 15);
-        spawnManager = GameObject.FindGameObjectWithTag("GameController");
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+
+    }
+
+    // Update is called once per frame
+    void Update () {
         move();
         timer += Time.deltaTime;
+        animationTimer += Time.deltaTime;
         if(timer >= deleteTime)
         {
             if (collidingWithPlayer == true)
@@ -33,6 +38,11 @@ public class WaveBehaviour : MonoBehaviour {
             }
             spawnManager.GetComponent<Background_Tile_Spawner>().ChangeOceanScrollSpeed(0.5f);
             selfdestruct();
+        }
+        if(animationTimer > 0.5f)
+        {
+            animationTimer = 0;
+            switchframe();
         }
 	}
     public void SetUp()
@@ -48,6 +58,8 @@ public class WaveBehaviour : MonoBehaviour {
 
         }
         direction = isoForward;
+        deleteTime = Random.Range(7, 15);
+        spawnManager = GameObject.FindGameObjectWithTag("GameController");
     }
     public void move()
     {
@@ -84,6 +96,21 @@ public class WaveBehaviour : MonoBehaviour {
             spawnManager.GetComponent<WaveHandler>().changespeed(0.2f);
             spawnManager.GetComponent<WaveHandler>().WaveSpawnEnabled(true);
             spawnManager.GetComponent<Background_Tile_Spawner>().ChangeOceanScrollSpeed(0.5f);
+        }
+    }
+    public void switchframe()
+    {
+        if (animationCounter == 1)
+        {
+ 
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = wave2;
+            animationCounter = 2;
+        }
+        else if (animationCounter == 2)
+        {
+
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = wave1;
+            animationCounter = 1;
         }
     }
 }
