@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleHandler : MonoBehaviour {
-    public float currentSpeed;
+    float currentSpeed;
     float timer;
     public float spawnRate = 1;
     public GameObject obs;
