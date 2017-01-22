@@ -145,6 +145,12 @@ public class PlayerMovement : MonoBehaviour {
             spawnManager.GetComponent<ObstacleHandler>().changeSpeed(0.2f);
             surfing = false;
         }
+        if (other.tag == "Obstacle")
+        {
+            spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.2f);
+            spawnManager.GetComponent<ObstacleHandler>().changeSpeed(0.2f);
+            distance = distance - obsPenalty * Time.deltaTime;
+        }
     }
     public bool IsSurfing()
     {

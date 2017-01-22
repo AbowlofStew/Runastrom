@@ -87,7 +87,6 @@ public class WaveBehaviour : MonoBehaviour {
             spawnManager.GetComponent<WaveHandler>().WaveSpawnEnabled(false);
             spawnManager.GetComponent<Background_Tile_Spawner>().ChangeOceanScrollSpeed(1f);
         }
-
     }
 
     void OnTriggerExit2D(Collider2D other)
