@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paddle-Paddle.Plugins", "Paddle-Paddle.Plugins.csproj", "{3FA5D16F-096C-C83C-6062-CA47A8908611}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paddle-Paddle", "Paddle-Paddle.csproj", "{824E30EC-F73E-5AE5-5B36-BE852D1CCFFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paddle-Paddle.Editor.Plugins", "Paddle-Paddle.Editor.Plugins.csproj", "{BFDF7D6B-0029-2A26-91ED-74B00A4A42BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +13,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FA5D16F-096C-C83C-6062-CA47A8908611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FA5D16F-096C-C83C-6062-CA47A8908611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FA5D16F-096C-C83C-6062-CA47A8908611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FA5D16F-096C-C83C-6062-CA47A8908611}.Release|Any CPU.Build.0 = Release|Any CPU
 		{824E30EC-F73E-5AE5-5B36-BE852D1CCFFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{824E30EC-F73E-5AE5-5B36-BE852D1CCFFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{824E30EC-F73E-5AE5-5B36-BE852D1CCFFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{824E30EC-F73E-5AE5-5B36-BE852D1CCFFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFDF7D6B-0029-2A26-91ED-74B00A4A42BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFDF7D6B-0029-2A26-91ED-74B00A4A42BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFDF7D6B-0029-2A26-91ED-74B00A4A42BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFDF7D6B-0029-2A26-91ED-74B00A4A42BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
