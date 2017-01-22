@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         if(surfing)
         {
             distance += waveBonus;
@@ -44,10 +45,11 @@ public class PlayerMovement : MonoBehaviour {
         {
             distance -= Time.deltaTime * speedloss;
         }
-        if(distance == 0.3)
+        if(distance <= 0.3)
         {
-            Debug.Log("Game Over");
+            GameObject.FindGameObjectWithTag("Menu").GetComponent<Menu>().GameOver();
         }
+
         if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) 
             && currentMovementPosition <= movementLimit)
         {
@@ -111,7 +113,7 @@ public class PlayerMovement : MonoBehaviour {
         }
             Vector2 vec = Vector2.down + Vector2.left;
             vec.Normalize();
-            Vector2 vec2 = new Vector2(0, 0);
+            Vector2 vec2 = new Vector2(-0.3f, 0);
             vec = vec2 + vec;
             vec = vec * distance;
             fog.transform.position = new Vector3(vec.x, vec.y, 0);

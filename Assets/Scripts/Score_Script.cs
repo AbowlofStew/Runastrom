@@ -8,7 +8,7 @@ public class Score_Script : MonoBehaviour {
     private float time = 0;
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
@@ -19,6 +19,12 @@ public class Score_Script : MonoBehaviour {
             score += 1;
             time -= 1;
             GetComponent<Text>().text = string.Concat("Leagues: ", score.ToString());
+            GameObject.FindGameObjectWithTag("HiScore").GetComponent<Communication>().SetScore(score);
         }
 	}
+
+    public int GetScore()
+    {
+        return score;
+    }
 }
