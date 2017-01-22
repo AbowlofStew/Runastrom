@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Background_Script : MonoBehaviour {
-    public float baseScrollSpeed = 0.01f;
+    public float baseScrollSpeed;
     private Vector3 screenBottomLeft;
     private Vector3 screenUpperRight;
     private Vector3 startPosition;
@@ -16,7 +16,8 @@ public class Background_Script : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Translate((Vector3.left + Vector3.down) * baseScrollSpeed);
+        transform.Translate((Vector3.left + Vector3.down) * baseScrollSpeed * Time.deltaTime);
+
         if (transform.position.x < screenBottomLeft.x - GetComponent<SpriteRenderer>().bounds.size.x)
         {
             transform.position = new Vector3(screenUpperRight.x, transform.position.y, startPosition.z);
