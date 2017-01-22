@@ -41,7 +41,7 @@ public class Background_Tile_Spawner : MonoBehaviour {
     {
         foreach(Background_Script b in ocean)
         {
-            b.baseScrollSpeed = speed;
+            b.slowScrollSpeed = speed;
         }
     }
 }
