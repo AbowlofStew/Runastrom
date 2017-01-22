@@ -7,7 +7,7 @@ public class Background_Tile_Spawner : MonoBehaviour {
     private float xBounds;
     private float yBounds;
     private Vector3 screenUpperRight;
-    public GameObject[] oceanTiles;
+    public List<Background_Script> ocean;
     // Use this for initialization
     void Start () {
 
@@ -25,12 +25,11 @@ public class Background_Tile_Spawner : MonoBehaviour {
             for (int i = 0; i < 16; i++)
             {
                 Instantiate(Tile, p, Quaternion.identity);
-               
+                ocean.Add(Tile.GetComponent<Background_Script>());
                 p.Set(p.x - screenSize.x / 14, p.y, p.z);
             }
             p.Set(screenUpperRight.x + xBounds, p.y - screenSize.y / 7, p.z);
         }
-       
     }
 	
 	// Update is called once per frame
@@ -38,5 +37,11 @@ public class Background_Tile_Spawner : MonoBehaviour {
 		
 	}
 
-    
+    public void ChangeOceanScrollSpeed(float speed)
+    {
+        foreach(Background_Script b in ocean)
+        {
+            b.baseScrollSpeed = speed;
+        }
+    }
 }

@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-    public float horizontalMovementLimit;
-    public float verticalMovementLimit;
+    public float movementLimit = 3;
     public float maxMoveSpeed, minMoveSpeed;
     private float moveSpeed;
     private float currentMovementPosition = 0;
     public GameObject spawnManager;
-    private bool surfing;
-
-    Vector2 isoLeft, isoRight, isoUp, isoDown;
+    public bool collidedWithPlayer;
+    Vector2 isoLeft, isoRight;
     public enum KeysPressed
     {
         NoKeysPressed,
@@ -35,7 +33,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
 
         if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) 
-            && currentMovementPosition <= horizontalMovementLimit)
+            && currentMovementPosition <= movementLimit)
         {
             if (LastKeyPressed == KeysPressed.RightKeyPressed)
             {
@@ -52,7 +50,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow)
-            && currentMovementPosition >= -1*horizontalMovementLimit)
+            && currentMovementPosition >= -1*movementLimit)
         {
             if(LastKeyPressed == KeysPressed.LeftKeyPressed)
             {
@@ -86,22 +84,12 @@ public class PlayerMovement : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0);
-        surfing = true;
        
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.2f);
-        surfing = false;
     }
 
-    public void StopSurfing()
-    {
-        surfing = false;
-    }
-    public bool IsSurfing()
-    {
-        return surfing;
-    }
 }
