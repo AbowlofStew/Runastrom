@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paddle-Paddle.CSharp.Plugins", "Paddle-Paddle.CSharp.Plugins.csproj", "{7F872D84-FF2C-43A0-ABF7-A1C843F3A08A}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paddle-Paddle.CSharp", "Paddle-Paddle.CSharp.csproj", "{0DD7245D-0BE3-81BB-2F60-C3EB9D2D9E9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paddle-Paddle.CSharp.Editor.Plugins", "Paddle-Paddle.CSharp.Editor.Plugins.csproj", "{5BC0742F-4685-39D8-AD50-2F2D131664C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +13,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F872D84-FF2C-43A0-ABF7-A1C843F3A08A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F872D84-FF2C-43A0-ABF7-A1C843F3A08A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F872D84-FF2C-43A0-ABF7-A1C843F3A08A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F872D84-FF2C-43A0-ABF7-A1C843F3A08A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0DD7245D-0BE3-81BB-2F60-C3EB9D2D9E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0DD7245D-0BE3-81BB-2F60-C3EB9D2D9E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DD7245D-0BE3-81BB-2F60-C3EB9D2D9E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DD7245D-0BE3-81BB-2F60-C3EB9D2D9E9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BC0742F-4685-39D8-AD50-2F2D131664C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BC0742F-4685-39D8-AD50-2F2D131664C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BC0742F-4685-39D8-AD50-2F2D131664C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BC0742F-4685-39D8-AD50-2F2D131664C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
