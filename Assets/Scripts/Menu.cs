@@ -38,4 +38,14 @@ public class Menu : MonoBehaviour {
         
 
     }
+
+    public void Continue()
+    {
+        SceneManager.LoadScene("titlescreen", LoadSceneMode.Single);
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("Game Over", LoadSceneMode.Single);
+    }
 }
