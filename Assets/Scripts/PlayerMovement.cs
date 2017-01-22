@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour {
     private float moveSpeed;
     private float currentMovementPosition = 0;
     public bool collidedWithPlayer;
+    public GameObject spawnManager;
     Vector2 isoLeft, isoRight;
     public enum KeysPressed
     {
@@ -78,7 +79,7 @@ public class PlayerMovement : MonoBehaviour {
             LastKeyPressed = KeysPressed.NoKeysPressed;
         }
     }
-<<<<<<< HEAD:Assets/PlayerMovement.cs
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -90,6 +91,5 @@ public class PlayerMovement : MonoBehaviour {
     {
         spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.2f);
     }
-=======
->>>>>>> origin/master:Assets/Scripts/PlayerMovement.cs
+
 }
