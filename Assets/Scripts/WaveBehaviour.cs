@@ -8,11 +8,15 @@ public class WaveBehaviour : MonoBehaviour {
     Vector2 isoForward, isoBackward, direction;
     int dir;
     public float movementspeed = 50;
+    public GameObject spawnManager;
 
-	// Use this for initialization
-	void Start () {
+    private bool collidingWithPlayer = false;
+
+    // Use this for initialization
+    void Start () {
         SetUp();
         deleteTime = Random.Range(3, 20);
+        spawnManager = GameObject.FindGameObjectWithTag("GameController");
 	}
 	
 	// Update is called once per frame
@@ -21,6 +25,13 @@ public class WaveBehaviour : MonoBehaviour {
         timer += Time.deltaTime;
         if(timer >= deleteTime)
         {
+            if (collidingWithPlayer == true)
+            {
+                spawnManager.GetComponent<WaveHandler>().changespeed(0.2f);
+                spawnManager.GetComponent<WaveHandler>().WaveSpawnEnabled(true);
+                spawnManager.GetComponent<Background_Tile_Spawner>().ChangeOceanScrollSpeed(0.5f);
+            }
+            spawnManager.GetComponent<Background_Tile_Spawner>().ChangeOceanScrollSpeed(0.5f);
             selfdestruct();
         }
 	}
@@ -46,5 +57,33 @@ public class WaveBehaviour : MonoBehaviour {
     {
         GameObject.Find("Spawner Manager").GetComponent<WaveHandler>().wavesList.Remove(this.gameObject);   
         Destroy(this.gameObject);
+    }
+
+    public void ChangeSpeed(float newSpeed)
+    {
+        movementspeed = newSpeed;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            collidingWithPlayer = true;
+            spawnManager.GetComponent<WaveHandler>().changespeed(0);
+            spawnManager.GetComponent<WaveHandler>().WaveSpawnEnabled(false);
+            spawnManager.GetComponent<Background_Tile_Spawner>().ChangeOceanScrollSpeed(1f);
+        }
+
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            collidingWithPlayer = false;
+            spawnManager.GetComponent<WaveHandler>().changespeed(0.2f);
+            spawnManager.GetComponent<WaveHandler>().WaveSpawnEnabled(true);
+            spawnManager.GetComponent<Background_Tile_Spawner>().ChangeOceanScrollSpeed(0.5f);
+        }
     }
 }

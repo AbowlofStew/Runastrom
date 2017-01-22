@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour {
     public float maxMoveSpeed, minMoveSpeed;
     private float moveSpeed;
     private float currentMovementPosition = 0;
-    public GameObject spawnManager;
     public bool collidedWithPlayer;
     Vector2 isoLeft, isoRight;
     public enum KeysPressed
@@ -77,25 +76,6 @@ public class PlayerMovement : MonoBehaviour {
         {
             moveSpeed = minMoveSpeed;
             LastKeyPressed = KeysPressed.NoKeysPressed;
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Wave")
-        {
-            spawnManager.GetComponent<WaveHandler>().changespeed(0);
-            spawnManager.GetComponent<Background_Tile_Spawner>().ChangeOceanScrollSpeed(1f);
-        }
-       
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Wave")
-        {
-            spawnManager.GetComponent<WaveHandler>().changespeed(0.2f);
-            spawnManager.GetComponent<Background_Tile_Spawner>().ChangeOceanScrollSpeed(0.5f);
         }
     }
 }

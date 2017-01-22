@@ -10,6 +10,8 @@ public class WaveHandler : MonoBehaviour {
     public float spawntime = 1;
     public GameObject Wave;
 
+    private bool spawnEnabled = true;
+
     public List<GameObject> wavesList = new List<GameObject>();
 	// Use this for initialization
 	void Start () {
@@ -20,7 +22,7 @@ public class WaveHandler : MonoBehaviour {
 	void Update ()
     {
         timer += Time.deltaTime;
-        if (timer >= spawntime)
+        if (timer >= spawntime && spawnEnabled == true)
         {
             timer = 0;
             spawnWave();
@@ -48,6 +50,11 @@ public class WaveHandler : MonoBehaviour {
         {
             wave.gameObject.GetComponent<WaveBehaviour>().movementspeed = speed;
         }
+    }
+
+    public void WaveSpawnEnabled(bool enabled)
+    {
+        spawnEnabled = enabled;
     }
     
 }
