@@ -30,7 +30,7 @@ public class WaveHandler : MonoBehaviour {
 	}
     public void generateSpawnLoc()
     {
-        x = Random.Range(0,-200);
+        x = Random.Range(50,-150);
         x = x / 100;
         y = (-1*x) - 2;
         spawnloc = new Vector2(x, y);

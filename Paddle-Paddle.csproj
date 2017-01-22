@@ -86,6 +86,7 @@
     <Compile Include="Assets\Score_Retrieval.cs" />
     <Compile Include="Assets\Scripts\Background_Script.cs" />
     <Compile Include="Assets\Scripts\Background_Tile_Spawner.cs" />
+    <Compile Include="Assets\Scripts\Game_Over.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\ObstacleBehaviour.cs" />
     <Compile Include="Assets\Scripts\ObstacleHandler.cs" />
