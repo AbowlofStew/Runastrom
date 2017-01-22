@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
+    public float obsPenalty;
     public GameObject fog;
     public float maxdistance = 2;
     public float speedloss = 0.1f;
@@ -124,14 +125,34 @@ public class PlayerMovement : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0);
-        surfing = true;
+        if (other.tag == "Wave")
+        {
+            spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0);
+            spawnManager.GetComponent<ObstacleHandler>().changeSpeed(0.4f);
+            surfing = true;
+        }
+        if ( other.tag == "Obstacle")
+        {
+            spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.4f);
+            spawnManager.GetComponent<ObstacleHandler>().changeSpeed(0f);
+            distance = distance - obsPenalty * Time.deltaTime;
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.2f);
-        surfing = false;
+        if (other.tag == "Wave")
+        {
+            spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.2f);
+            spawnManager.GetComponent<ObstacleHandler>().changeSpeed(0.2f);
+            surfing = false;
+        }
+        if (other.tag == "Obstacle")
+        {
+            spawnManager.GetComponent<WaveHandler>().ChangeSpeed(0.2f);
+            spawnManager.GetComponent<ObstacleHandler>().changeSpeed(0.2f);
+            distance = distance - obsPenalty * Time.deltaTime;
+        }
     }
     public bool IsSurfing()
     {

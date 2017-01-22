@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/titlescreen.unity
+=======
+- path: Assets/Credits.unity
+>>>>>>> origin/master
   isLoaded: 1
   isActive: 1
