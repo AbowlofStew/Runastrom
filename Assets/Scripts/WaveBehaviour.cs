@@ -15,7 +15,7 @@ public class WaveBehaviour : MonoBehaviour {
     // Use this for initialization
     void Start () {
         SetUp();
-        deleteTime = Random.Range(3, 20);
+        deleteTime = Random.Range(7, 15);
         spawnManager = GameObject.FindGameObjectWithTag("GameController");
 	}
 	
