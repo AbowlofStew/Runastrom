@@ -39,4 +39,5 @@ public class ObstacleBehaviour : MonoBehaviour {
         GameObject.Find("Spawner Manager").GetComponent<ObstacleHandler>().obsList.Remove(this.gameObject);
         Destroy(this);
     }
+
 }
