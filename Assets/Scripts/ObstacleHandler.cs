@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstacleHandler : MonoBehaviour {
     float currentSpeed = 1f;
     float timer;
-    public float spawnRate = 1;
+    public float spawnRate = 2;
     public GameObject obs;
     public List<GameObject> obsList = new List<GameObject>();
 	// Use this for initialization
@@ -16,7 +16,11 @@ public class ObstacleHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         timer += Time.deltaTime;
-
+        spawnRate = 1.5f / (timer / 60);
+        if (spawnRate < 0.1f)
+        {
+            spawnRate = 0.1f;
+        }
         if(timer >= spawnRate)
         {
             

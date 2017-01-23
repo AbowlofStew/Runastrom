@@ -52,9 +52,6 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -69,9 +66,6 @@
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
@@ -98,6 +92,9 @@
     <Compile Include="Assets\Score_Retrieval.cs" />
     <Compile Include="Assets\Scripts\Background_Script.cs" />
     <Compile Include="Assets\Scripts\Background_Tile_Spawner.cs" />
+    <Compile Include="Assets\Scripts\CloudBehaviour.cs" />
+    <Compile Include="Assets\Scripts\CloudHandler.cs" />
+    <Compile Include="Assets\Scripts\Game_Over.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\ObstacleBehaviour.cs" />
     <Compile Include="Assets\Scripts\ObstacleHandler.cs" />
